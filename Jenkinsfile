@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        // browser-safe default port; override in job config if needed
-        SERVE_PORT = '8080'
+        // Fixed serve port requested by user
+        SERVE_PORT = '5060'
     }
 
     stages {
