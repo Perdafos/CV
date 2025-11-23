@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        // browser-safe default port; override in job config if needed
+        SERVE_PORT = '8080'
+    }
 
     stages {
         stage('Checkout') {
@@ -29,14 +33,14 @@ if [ -z "$PY" ]; then
     echo "No python available on agent; skipping smoke test"
     exit 0
 fi
-echo "Starting temporary server with $PY on port 5060"
-$PY -m http.server 5060 > /tmp/cv_server.log 2>&1 &
+echo "Starting temporary server with $PY on port $SERVE_PORT"
+$PY -m http.server $SERVE_PORT > /tmp/cv_server.log 2>&1 &
 PID=$!
 sleep 2
 if command -v curl >/dev/null 2>&1; then
-    curl -sfS http://localhost:5060 >/dev/null || (cat /tmp/cv_server.log; kill $PID; exit 1)
+    curl -sfS http://localhost:$SERVE_PORT >/dev/null || (cat /tmp/cv_server.log; kill $PID; exit 1)
 else
-    wget -qO- http://localhost:5060 >/dev/null || (cat /tmp/cv_server.log; kill $PID; exit 1)
+    wget -qO- http://localhost:$SERVE_PORT >/dev/null || (cat /tmp/cv_server.log; kill $PID; exit 1)
 fi
 kill $PID || true
 '''
@@ -45,9 +49,9 @@ kill $PID || true
 powershell -NoProfile -Command ^
     $py = (Get-Command python -ErrorAction SilentlyContinue).Path; ^
     if(-not $py){ Write-Host 'python not found, skipping smoke test'; exit 0 } ^
-    $p = Start-Process -FilePath $py -ArgumentList '-m','http.server','5060' -PassThru; ^
+    $p = Start-Process -FilePath $py -ArgumentList '-m','http.server',$env:SERVE_PORT -PassThru; ^
     Start-Sleep -Seconds 2; ^
-    try { Invoke-WebRequest -UseBasicParsing -Uri http://localhost:5060 -ErrorAction Stop | Out-Null } ^
+    try { Invoke-WebRequest -UseBasicParsing -Uri http://localhost:$env:SERVE_PORT -ErrorAction Stop | Out-Null } ^
     finally { $p | Stop-Process -Force -ErrorAction SilentlyContinue }
 '''
                     }
