@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Dafa Ghaitsa Yogatama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        font-family: "JetBrains Mono", monospace;
+      }
+    </style>
+  </head>
+  <body class="text-gray-900">
+    <button id="theme-toggle" aria-label="Toggle theme" class="fixed top-4 right-4 z-50 w-10 h-10 rounded-md">
+      <span id="theme-icon"><i class="fa-regular fa-sun"></i></span>
+    </button>
+
+    <!-- Settings floating button -->
+    <button id="settings-btn" class="settings-button" aria-label="Open settings">
+      <i class="fa-solid fa-gear"></i>
+    </button>
+
+    <div id="settings-panel" class="settings-panel" role="dialog" aria-hidden="true">
+      <h4 data-i18n="settings_title">Settings</h4>
+      <div class="settings-row">
+        <a href="download.html" target="_blank" rel="noopener" class="open-download lang-btn" data-i18n="download_pdf">Open download page</a>
+      </div>
+      <div style="margin-top:6px;">
+        <div style="font-size:12px; margin-bottom:6px;" data-i18n="language_label">Language</div>
+        <div class="settings-row">
+          <button class="lang-btn" id="lang-id">ID</button>
+          <button class="lang-btn" id="lang-en">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="cv-root"
+      class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-10 mt-10"
+    >
+      <!-- LEFT SIDEBAR -->
+      <aside class="md:col-span-1">
+        <div class="bg-white border border-gray-300 rounded-xl p-6 shadow-sm sidebar-card">
+          <img
+            src="dafa.png"
+            class="w-40 h-40 rounded-full mx-auto object-cover border-2 border-gray-800"
+          />
+
+          <h2 class="text-center text-xl font-semibold mt-4">
+            Dafa Ghaitsa Yogatama
+          </h2>
+          <p class="text-center text-sm text-gray-600" data-i18n="role">Web Developer</p>
+
+          <div class="mt-4 text-sm space-y-1">
+            <p class="flex items-center"><i class="fa-solid fa-envelope mr-3 text-gray-700"></i> <span data-i18n="contact_email_label">Email:</span> yogatamadafa9@gmail.com</p>
+            <p class="flex items-center"><i class="fa-solid fa-location-dot mr-3 text-gray-700"></i> <span data-i18n="contact_location_label">Location:</span> Indonesia, Jawa Timur, Malang</p>
+            <p class="flex items-center"><i class="fa-brands fa-linkedin mr-3 text-gray-700"></i><a href="https://www.linkedin.com/in/dafa-ghaitsa-yogatama" class="hover:underline" data-i18n="contact_linkedin">linkedin.com/in/dafa-ghaitsa-yogatama</a></p>
+            <p class="flex items-center"><i class="fa-brands fa-github mr-3"></i><a href="https://github.com/Perdafos" class="hover:underline" data-i18n="contact_github">github.com/Perdafos</a></p>
+          </div>
+
+          <p class="text-sm mt-4 leading-relaxed" data-i18n="about_paragraph">Nama saya Dafa Ghaitsa Yogatama, biasa dipanggil Dafa. Saat ini saya memiliki keahlian di bidang IT, khususnya dalam pengembangan website dan pengelolaan server. Di luar aktivitas tersebut, saya memiliki minat yang cukup beragam, mulai dari bermain bola basket, bermusik, menggambar, hingga mengembangkan berbagai proyek coding sebagai bentuk eksplorasi dan pengembangan diri.</p>
+<br>
+          <div class="skills" aria-label="Tech stack">
+            <h4 data-i18n="skills">skills</h4>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">HTML</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">CSS</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">JavaScript</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">TypeScript</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Laravel</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">React</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Tailwind</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Bootstrap</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Git</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Figma</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Jenkins</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Komo.do</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Docker</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">MySQL</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">Solidity</span>
+              <span class="inline-flex items-center gap-2 px-2 py-1 rounded-sm border-black border text-gray-800 hover:bg-gray-100 text-xs font-bold cursor-default">HardHat</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <main class="md:col-span-2 space-y-10">
+        <section>
+          <h3 class="text-lg tracking-widest mb-4 font-semibold" data-i18n="experience">EXPERIENCE</h3>
+
+          <div class="mb-6">
+            <h4 class="font-semibold" data-i18n="exp1_title">Website PKL Siswa — Team Sekolah</h4>
+            <p class="text-sm text-gray-600" data-i18n="exp1_meta">2025 - Malang · SMKN 6 Malang - On Site</p>
+            <ul class="list-disc ml-6 mt-2 text-sm space-y-1">
+              <li data-i18n="exp1_item1">Membangun platform manajemen PKL untuk siswa dan pembimbing menggunakan Laravel dan Bootstrap.</li>
+              <li data-i18n="exp1_item2">Membuat sistem login multi-role (Admin, Siswa, Perusahaan).</li>
+              <li data-i18n="exp1_item3">Mengembangkan fitur upload perusahaan.</li>
+              <li data-i18n="exp1_item4">Mendesain antarmuka yang clean, responsif, serta mudah digunakan untuk kebutuhan sekolah.</li>
+            </ul>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold" data-i18n="exp2_title">Website Perumahan Bintaro — Team Projects</h4>
+            <p class="text-sm text-gray-600" data-i18n="exp2_meta">2025 - Jakarta Selatan · Bintaro - Remote</p>
+            <ul class="list-disc ml-6 mt-2 text-sm space-y-1">
+              <li data-i18n="exp2_item1">Mengembangkan website pemasaran properti dengan fokus pada UI/UX yang profesional dan modern.</li>
+              <li data-i18n="exp2_item2">Membangun sistem katalog rumah lengkap dengan fitur pencarian, filter lokasi, tipe rumah, dan harga.</li>
+              <li data-i18n="exp2_item3">Menerapkan CMS berbasis Laravel untuk mengelola data rumah, galeri foto, dan konten landing page.</li>
+              <li data-i18n="exp2_item4">Mengoptimalkan performa dan SEO untuk meningkatkan visibilitas website di pencarian.</li>
+              <li data-i18n="exp2_item5">Membuat tampilan responsif yang nyaman digunakan di mobile, tablet, dan desktop.</li>
+            </ul>
+          </div>
+
+          <!-- Achievement -->
+          <h3 class="text-lg tracking-widest mb-4 font-semibold" data-i18n="achievement">
+            Achievement
+          </h3>
+
+          <div class="mb-6">
+            <h4 class="font-semibold" data-i18n="achv_title">Kader Inovasi</h4>
+            <p class="text-sm text-gray-600" data-i18n="achv_meta">2023 - Malang · Jawa Timur</p>
+            <ul class="list-disc ml-6 mt-2 text-sm space-y-1">
+              <li data-i18n="achv_item1">Juara 1 IPA & Lingkungan — SMPN 22 Kota Malang</li>
+              <li data-i18n="achv_item2">Medali Emas I2ASPO bidang Pengelolaan Limbah (Internasional)</li>
+              <li data-i18n="achv_item3">Medali Perunggu YISF bidang Penelitian Lingkungan (Internasional)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="grid md:grid-cols-3 gap-10">
+          <div>
+            <h3 class="text-lg tracking-widest mb-3 font-semibold" data-i18n="education">
+              EDUCATION
+            </h3>
+            <p class="font-semibold" data-i18n="edu_school">SMK Negeri 6 Malang</p>
+            <p class="text-sm" data-i18n="edu_major">SIJA (Computer & Network Engineering)</p>
+            <p class="text-sm text-gray-600" data-i18n="edu_years">2022 - Present</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg tracking-widest mb-3 font-semibold" data-i18n="languages">
+              LANGUAGES
+            </h3>
+            <p class="text-sm" data-i18n="lang_ind">Indonesian — Fluent</p>
+            <p class="text-sm" data-i18n="lang_en">English — Intermediate</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg tracking-widest mb-3 font-semibold" data-i18n="contact">CONTACT</h3>
+            <p class="text-sm"><span data-i18n="contact_email_label">Email:</span> yogatamadafa9@gmail.com</p>
+            <p class="text-sm"><span data-i18n="contact_phone_label">Phone:</span> +62 812—3485—3434</p>
+            <p class="text-sm"><span data-i18n="contact_location_label">Location:</span> Malang, Indonesia</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      (function(){
+        const root = document.documentElement;
+        const btn = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+
+        function getSystemPref() {
+          return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function applyTheme(t){
+          root.setAttribute('data-theme', t);
+          try{ localStorage.setItem('theme', t); }catch(e){}
+          if(icon) icon.innerHTML = t === 'dark' ? '<i class="fa-regular fa-sun text-gray-500"></i>' : '<i class="fa-solid fa-moon text-gray-500"></i>';
+        }
+
+        const stored = (function(){ try{ return localStorage.getItem('theme'); }catch(e){ return null; }})();
+        applyTheme(stored ? stored : getSystemPref());
+
+        if(btn){
+          btn.addEventListener('click', function(){
+            const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(cur);
+          });
+        }
+      })();
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+      <script>
+        // Settings: panel toggle, download PDF, language switching
+        (function(){
+          const settingsBtn = document.getElementById('settings-btn');
+          const panel = document.getElementById('settings-panel');
+          const pdfBtn = document.getElementById('download-pdf');
+          const langId = document.getElementById('lang-id');
+          const langEn = document.getElementById('lang-en');
+          const rootEl = document.getElementById('cv-root');
+
+          const translations = {
+            id: {
+              settings_title: 'Pengaturan',
+              download_pdf: 'Unduh PDF',
+              download_png: 'Unduh PNG',
+              language_label: 'Bahasa',
+              experience: 'PENGALAMAN',
+              achievement: 'PRESTASI',
+              education: 'PENDIDIKAN',
+              languages: 'BAHASA',
+              contact: 'KONTAK',
+              skills: 'keahlian',
+              role: 'Web Developer',
+              contact_email_label: 'Email:',
+              contact_phone_label: 'Telepon:',
+              contact_location_label: 'Lokasi:',
+              contact_linkedin: 'linkedin.com/in/dafa-ghaitsa-yogatama',
+              contact_github: 'github.com/Perdafos',
+              about_paragraph: 'Nama saya Dafa Ghaitsa Yogatama, biasa dipanggil Dafa. Saat ini saya memiliki keahlian di bidang IT, khususnya dalam pengembangan website dan pengelolaan server. Di luar aktivitas tersebut, saya memiliki minat yang cukup beragam, mulai dari bermain bola basket, bermusik, menggambar, hingga mengembangkan berbagai proyek coding sebagai bentuk eksplorasi dan pengembangan diri.',
+              exp1_title: 'Website PKL Siswa — Team Sekolah',
+              exp1_meta: '2025 - Malang · SMKN 6 Malang - On Site',
+              exp1_item1: 'Membangun platform manajemen PKL untuk siswa dan pembimbing menggunakan Laravel dan Bootstrap.',
+              exp1_item2: 'Membuat sistem login multi-role (Admin, Siswa, Perusahaan).',
+              exp1_item3: 'Mengembangkan fitur upload perusahaan.',
+              exp1_item4: 'Mendesain antarmuka yang clean, responsif, serta mudah digunakan untuk kebutuhan sekolah.',
+              exp2_title: 'Website Perumahan Bintaro — Team Projects',
+              exp2_meta: '2025 - Jakarta Selatan · Bintaro - Remote',
+              exp2_item1: 'Mengembangkan website pemasaran properti dengan fokus pada UI/UX yang profesional dan modern.',
+              exp2_item2: 'Membangun sistem katalog rumah lengkap dengan fitur pencarian, filter lokasi, tipe rumah, dan harga.',
+              exp2_item3: 'Menerapkan CMS berbasis Laravel untuk mengelola data rumah, galeri foto, dan konten landing page.',
+              exp2_item4: 'Mengoptimalkan performa dan SEO untuk meningkatkan visibilitas website di pencarian.',
+              exp2_item5: 'Membuat tampilan responsif yang nyaman digunakan di mobile, tablet, dan desktop.',
+              achv_title: 'Kader Inovasi',
+              achv_meta: '2023 - Malang · Jawa Timur',
+              achv_item1: 'Juara 1 IPA & Lingkungan — SMPN 22 Kota Malang',
+              achv_item2: 'Medali Emas I2ASPO bidang Pengelolaan Limbah (Internasional)',
+              achv_item3: 'Medali Perunggu YISF bidang Penelitian Lingkungan (Internasional)',
+              edu_school: 'SMK Negeri 6 Malang',
+              edu_major: 'SIJA (Computer & Network Engineering)',
+              edu_years: '2022 - Present',
+              lang_ind: 'Indonesian — Fluent',
+              lang_en: 'English — Intermediate'
+            },
+            en: {
+              settings_title: 'Settings',
+              download_pdf: 'Download PDF',
+              download_png: 'Download PNG',
+              language_label: 'Language',
+              experience: 'EXPERIENCE',
+              achievement: 'ACHIEVEMENT',
+              education: 'EDUCATION',
+              languages: 'LANGUAGES',
+              contact: 'CONTACT',
+              skills: 'skills',
+              role: 'Web Developer',
+              contact_email_label: 'Email:',
+              contact_phone_label: 'Phone:',
+              contact_location_label: 'Location:',
+              contact_linkedin: 'linkedin.com/in/dafa-ghaitsa-yogatama',
+              contact_github: 'github.com/Perdafos',
+              about_paragraph: 'My name is Dafa Ghaitsa Yogatama, commonly called Dafa. I have expertise in IT, especially web development and server management. Outside of those activities, I have varied interests including playing basketball, music, drawing, and developing various coding projects as a form of exploration and self-improvement.',
+              exp1_title: 'Student Internship Website — School Team',
+              exp1_meta: '2025 - Malang · SMKN 6 Malang - On Site',
+              exp1_item1: 'Built an internship management platform for students and supervisors using Laravel and Bootstrap.',
+              exp1_item2: 'Implemented a multi-role login system (Admin, Student, Company).',
+              exp1_item3: 'Developed a company upload feature.',
+              exp1_item4: 'Designed a clean, responsive, and user-friendly interface for school needs.',
+              exp2_title: 'Bintaro Housing Website — Team Project',
+              exp2_meta: '2025 - Jakarta Selatan · Bintaro - Remote',
+              exp2_item1: 'Developed a property marketing website with a focus on professional, modern UI/UX.',
+              exp2_item2: 'Built a complete house catalog system with search, location filters, house types, and price filters.',
+              exp2_item3: 'Implemented a Laravel-based CMS to manage house data, photo galleries, and landing page content.',
+              exp2_item4: 'Optimized performance and SEO to improve website visibility in search engines.',
+              exp2_item5: 'Created responsive layouts optimized for mobile, tablet, and desktop.',
+              achv_title: 'Kader Inovasi',
+              achv_meta: '2023 - Malang · Jawa Timur',
+              achv_item1: '1st Place Science & Environment — SMPN 22 Malang City',
+              achv_item2: 'Gold Medal at I2ASPO in Waste Management (International)',
+              achv_item3: 'Bronze Medal at YISF in Environmental Research (International)',
+              edu_school: 'SMK Negeri 6 Malang',
+              edu_major: 'SIJA (Computer & Network Engineering)',
+              edu_years: '2022 - Present',
+              lang_ind: 'Indonesian — Fluent',
+              lang_en: 'English — Intermediate'
+            }
+          };
+
+          function setPanel(show){
+            if(show){
+              panel.classList.add('show');
+              panel.setAttribute('aria-hidden','false');
+            } else {
+              panel.classList.remove('show');
+              panel.setAttribute('aria-hidden','true');
+            }
+          }
+
+          settingsBtn && settingsBtn.addEventListener('click', function(){
+            setPanel(!panel.classList.contains('show'));
+          });
+
+          // Helper: export from a cloned wrapper so exported layout can differ from on-screen
+          function exportFromClone(exporter){
+            if(!rootEl) return Promise.reject(new Error('Area not found'));
+            const htmlEl = document.documentElement;
+            const prevTheme = htmlEl.getAttribute('data-theme');
+            // force light theme variables for export
+            htmlEl.setAttribute('data-theme','light');
+            htmlEl.classList.add('pdf-for-pdf-export');
+
+            // build wrapper and clone
+            const wrapper = document.createElement('div');
+            wrapper.id = 'cv-export-wrapper';
+            wrapper.className = 'export-two-col';
+            wrapper.style.background = '#ffffff';
+            wrapper.style.padding = '24px';
+            wrapper.style.boxSizing = 'border-box';
+            wrapper.style.position = 'relative';
+
+            // add diagonal SVG header specifically for export (top-left)
+            const svgNS = 'http://www.w3.org/2000/svg';
+            const svg = document.createElementNS(svgNS, 'svg');
+            svg.setAttribute('viewBox', '0 0 340 140');
+            svg.setAttribute('preserveAspectRatio', 'none');
+            svg.setAttribute('class', 'export-diagonal');
+            svg.innerHTML = '<polygon points="0,0 340,0 340,140" fill="#6a89c8"/>'; 
+            wrapper.appendChild(svg);
+
+            // Instead of cloning the entire root (which brings responsive classes),
+            // create a clean export structure: copy only the aside and main contents.
+            const origAside = rootEl.querySelector('aside');
+            const origMain = rootEl.querySelector('main');
+            const newAside = document.createElement('aside');
+            newAside.className = 'export-sidebar';
+            newAside.innerHTML = origAside ? origAside.innerHTML : '';
+
+            const newMain = document.createElement('main');
+            newMain.className = 'export-main';
+            newMain.innerHTML = origMain ? origMain.innerHTML : '';
+
+            wrapper.appendChild(newAside);
+            wrapper.appendChild(newMain);
+            document.body.appendChild(wrapper);
+
+            // wait for images to finish loading inside wrapper
+            const imgs = Array.from(wrapper.querySelectorAll('img'));
+            const waitImgs = Promise.all(imgs.map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; })));
+
+            return waitImgs.then(()=> exporter(wrapper)).finally(()=>{
+              // cleanup and restore theme
+              wrapper.remove();
+              htmlEl.classList.remove('pdf-for-pdf-export');
+              if(prevTheme) htmlEl.setAttribute('data-theme', prevTheme); else htmlEl.removeAttribute('data-theme');
+            });
+          }
+
+          // Download PDF using a cloned export wrapper
+          pdfBtn && pdfBtn.addEventListener('click', function(){
+            const opt = {
+              margin:       0.4,
+              filename:     'CV-Dafa-Ghaitsa.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            exportFromClone(wrapper => html2pdf().set(opt).from(wrapper).save()).catch(err => {
+              alert('Gagal membuat PDF: ' + (err && err.message ? err.message : err));
+            });
+          });
+
+          // Download PNG using a cloned export wrapper
+          const pngBtn = document.getElementById('download-png');
+          pngBtn && pngBtn.addEventListener('click', function(){
+            exportFromClone(wrapper => {
+              return html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+                // resample to A4 @300dpi (2480x3508 px)
+                const A4_WIDTH = 2480;
+                const A4_HEIGHT = 3508;
+                const target = document.createElement('canvas');
+                target.width = A4_WIDTH;
+                target.height = A4_HEIGHT;
+                const ctx = target.getContext('2d');
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0,0,A4_WIDTH,A4_HEIGHT);
+                ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, A4_WIDTH, A4_HEIGHT);
+                const link = document.createElement('a');
+                link.href = target.toDataURL('image/png');
+                link.download = 'CV-Dafa-Ghaitsa-A4.png';
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+              });
+            }).catch(err => {
+              alert('Gagal membuat PNG: ' + (err && err.message ? err.message : err));
+            });
+          });
+
+          // Simple i18n: swap textContent for elements with data-i18n
+          function applyLang(lang){
+            document.querySelectorAll('[data-i18n]').forEach(el=>{
+              const key = el.getAttribute('data-i18n');
+              const val = translations[lang] && translations[lang][key];
+              if(val) el.textContent = val;
+            });
+            // highlight active
+            langId && langId.classList.toggle('active', lang === 'id');
+            langEn && langEn.classList.toggle('active', lang === 'en');
+            try{ localStorage.setItem('cv-lang', lang); }catch(e){}
+          }
+
+          langId && langId.addEventListener('click', ()=>applyLang('id'));
+          langEn && langEn.addEventListener('click', ()=>applyLang('en'));
+
+          // Load stored language or default 'id'
+          const storedLang = (function(){ try{ return localStorage.getItem('cv-lang'); }catch(e){return null;} })();
+          applyLang(storedLang ? storedLang : 'id');
+        })();
+      </script>
+  </body>
+</html>

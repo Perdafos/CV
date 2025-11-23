@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+/* Theme variables: light (default) and dark using data-theme on <html> */
+:root {
+    --bg: #fafafa;
+    --text: #111827;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --sidebar-bg: #ffffff;
+    --border: #e5e7eb;
+    --accent: #111827;
+    --tag-bg: #f3f4f6;
+}
+
+[data-theme="dark"] {
+    /* Dark theme values (page bg, default cards, sidebar) */
+    --bg: #111011;            /* page background (very dark) */
+    --card-bg: #333333;       /* default card background (other cards) */
+    --sidebar-bg: #222222;    /* left sidebar card background */
+    --text: #e6eef8;
+    --muted: #9ca3af;
+    --border: #8a8a8a;
+    --accent: #e6eef8;
+    --tag-bg: #232427;
+}
+
+/* Sidebar-specific styling: override the generic .bg-white for the left sidebar only */
+.sidebar-card {
+    background-color: var(--sidebar-bg) !important;
+    border-color: var(--border) !important;
+}
+
+.sidebar-card img {
+    animation: bounceIn 1s ease-out 0.6s both;
+}
+
+/* Ensure the profile photo keeps its aspect ratio and doesn't stretch */
+.sidebar-card img {
+    width: 160px !important;
+    height: 160px !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    aspect-ratio: 1 / 1;
+    border-radius: 9999px !important;
+}
+
+/* Dedicated profile-photo class (stronger specificity) */
+.profile-photo {
+    width: 160px !important;
+    height: 160px !important;
+    object-fit: cover !important;
+    display: block !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 9999px !important;
+    border: 2px solid var(--border) !important;
+}
+
+/* Basic application of variables and overrides for some Tailwind utility classes used in the page */
+html, body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+body {
+    color: inherit;
+    overflow-y: hidden;
+}
+
+/* Override common utility classes used in the markup so theme applies consistently */
+.bg-white { background-color: var(--card-bg) !important; }
+.text-gray-900, .text-gray-800 { color: var(--text) !important; }
+.text-gray-600, .text-gray-700, .text-gray-500 { color: var(--muted) !important; }
+.border-gray-300, .border-black { border-color: var(--border) !important; }
+.border-2 { border-color: var(--border) !important; }
+.hover\:bg-gray-100:hover { background-color: var(--tag-bg) !important; }
+a { color: var(--accent); }
+
+/* Settings panel (floating) */
+.settings-button {
+    position: fixed;
+    left: 16px;
+    bottom: 24px;
+    z-index: 60;    
+    color: var(--text);
+    border: 0px solid var(--border);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.settings-panel {
+    position: fixed;
+    left: 16px;
+    bottom: 80px;
+    z-index: 60;
+    width: fit-content;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.45);
+    display: none;
+}
+
+.settings-panel.show {
+    display: block;
+}
+
+.settings-panel h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+}
+
+.settings-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.settings-panel button,
+.settings-panel .lang-btn {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.lang-btn.active {
+    background: var(--tag-bg);
+}
+
+/* More specific override so sidebar (which also uses .bg-white) gets sidebar-bg */
+.bg-white.sidebar-card, .sidebar-card.bg-white {
+    background-color: var(--sidebar-bg) !important;
+    border-color: var(--border) !important;
+}
+
+.bg-white.sidebar-card img, .sidebar-card.bg-white img {
+    border-color: var(--border) !important;
+}
+
+/* Improve appearance of skill badges */
+.skills h4 { text-transform: capitalize; margin-bottom: 6px; }
+.skills .flex { gap: 8px; }
+/* explicit skill-badge class to avoid Tailwind overrides */
+.skill-badge {
+    display: inline-block !important;
+    padding: 6px 10px !important;
+    margin: 2px 0 !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--border) !important;
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02) !important;
+}
+
+/* Dark theme subtle badge fill for readability */
+[data-theme="dark"] .skill-badge {
+    background: rgba(255,255,255,0.02) !important;
+}
+
+/* PDF export single-column helper */
+#cv-root.pdf-single-col {
+    grid-template-columns: 1fr !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Ensure when forcing white PDF theme the page background and cards become fully white */
+:root.pdf-for-pdf-export {
+    --bg: #ffffff;
+    --card-bg: #ffffff;
+}
+
+/* Export two-column layout to match provided design */
+.export-two-col, #cv-root.export-two-col {
+    display: grid !important;
+    grid-template-columns: 340px 1fr !important;
+    width: 1000px !important;
+    min-width: 1000px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    --export-sidebar-bg: #6a89c8; /* blue accent used for sidebar */
+    /* ensure sidebar uses the export color even if pdf-for-pdf-export forced white */
+    --sidebar-bg: var(--export-sidebar-bg);
+}
+
+/* Make the export grid stretch and remove extra top margin so columns sit side-by-side */
+#cv-root.export-two-col, .export-two-col {
+    align-items: stretch !important;
+    min-height: 100vh !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    margin-top: 0 !important;
+    gap: 0.5rem !important;
+}
+
+/* Sidebar styles in export: white text, larger photo with white ring */
+#cv-root.export-two-col .sidebar-card {
+    background: var(--sidebar-bg) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#cv-root.export-two-col aside {
+    display: block !important;
+    height: 100% !important;
+}
+
+#cv-root.export-two-col .sidebar-card {
+    margin: 0 !important;
+    height: calc(100vh - 48px) !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    padding-top: 28px !important;
+}
+
+#cv-root.export-two-col .sidebar-card a { color: rgba(255,255,255,0.95) !important; }
+
+#cv-root.export-two-col .profile-photo {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    border-radius: 9999px !important;
+    display: block !important;
+    margin: 12px auto !important;
+    /* white ring */
+    box-shadow: 0 0 0 8px rgba(255,255,255,1) !important;
+    border: 4px solid rgba(255,255,255,0.12) !important;
+}
+
+#cv-root.export-two-col .sidebar-card img {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    box-shadow: 0 0 0 8px rgba(255,255,255,1) !important;
+    border-radius: 9999px !important;
+    border: 4px solid rgba(255,255,255,0.12) !important;
+}
+
+#cv-root.export-two-col .sidebar-card .skills span,
+#cv-root.export-two-col .sidebar-card .skills .skill-badge,
+#cv-root.export-two-col .sidebar-card .skills span.inline-flex {
+    background: rgba(255,255,255,0.93) !important;
+    color: #264059 !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    padding: 6px 8px !important;
+    border-radius: 8px !important;
+    display: inline-block !important;
+    margin: 4px 4px 4px 0 !important;
+}
+
+/* Right column: timeline-style accents */
+#cv-root.export-two-col main { padding: 20px 40px !important; }
+#cv-root.export-two-col main h3, #cv-root.export-two-col main h4 { color: #2b3b57 !important; }
+
+#cv-root.export-two-col .mb-6 { position: relative; padding-left: 28px; }
+#cv-root.export-two-col .mb-6::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: rgba(106,137,200,0.6);
+}
+
+#cv-root.export-two-col .mb-6 ul.list-disc { list-style: none; margin: 0; padding: 0; }
+#cv-root.export-two-col .mb-6 ul.list-disc li { position: relative; padding-left: 18px; margin-bottom: 10px; }
+#cv-root.export-two-col .mb-6 ul.list-disc li::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #5a7ec0;
+}
+
+/* Ensure exported page background remains white on export when desired */
+#cv-root.export-two-col, #cv-root.export-two-col body, #cv-root.export-two-col html { background: #ffffff !important; }
+
+/* Diagonal SVG used only in export wrapper */
+.export-diagonal {
+    position: absolute !important;
+    /* move the SVG partly outside the wrapper so the triangle 'comes out' */
+    left: -48px !important;
+    top: -48px !important;
+    width: 300px !important;
+    height: 300px !important;
+    z-index: 2 !important; /* behind the white card but above wrapper bg */
+    pointer-events: none !important;
+    overflow: visible !important;
+    transform: rotate(-45deg) !important;
+    transform-origin: top left !important;
+}
+
+/* Make sure the sidebar content appears above the diagonal where needed */
+.export-two-col .sidebar-card,
+#cv-root.export-two-col .sidebar-card {
+    position: relative !important;
+    z-index: 4 !important;
+}
+
+/* Clean export layout: sidebar + main columns (used by the cloned wrapper) */
+.export-two-col .export-sidebar {
+    width: 340px !important;
+    box-sizing: border-box !important;
+    padding: 24px !important;
+}
+
+.export-two-col .export-main {
+    padding: 24px 40px !important;
+    box-sizing: border-box !important;
+}
+
+.export-two-col {
+    display: grid !important;
+    grid-template-columns: 360px 1fr !important;
+    width: 1000px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+}
+
+.export-two-col .export-sidebar .sidebar-card {
+    margin: 0 !important;
+    height: auto !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+/* Override: make the inner card white while the left export column stays blue */
+.export-two-col .export-sidebar {
+    background: var(--export-sidebar-bg) !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.export-two-col .export-sidebar .sidebar-card,
+#cv-root.export-two-col .export-sidebar .sidebar-card {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    z-index: 3 !important;
+}
+
+.export-two-col .export-sidebar .sidebar-card a,
+#cv-root.export-two-col .export-sidebar .sidebar-card a {
+    color: var(--accent) !important;
+}
+
+/* Make the diagonal sit behind the white card */
+.export-diagonal { z-index: 1 !important; }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#cv-root {
+    animation: fadeIn 1s ease-out;
+}
+
+#cv-root aside {
+    animation: slideInLeft 1s ease-out 0.2s both;
+}
+
+#cv-root main {
+    animation: slideInRight 1s ease-out 0.4s both;
+}
+
+.skill-badge {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#theme-toggle {
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.settings-button {
+    transition: transform 0.3s ease;
+}
+
+.settings-button:hover {
+    transform: rotate(180deg);
+}
+

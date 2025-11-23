@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV - Ready to Download</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: "JetBrains Mono", monospace;
+      }
+    </style>
+  </head>
+  <body class="overflow-y-auto">
+    <div class="text-center mt-3"><strong data-i18n="download_heading">Download</strong></div>
+
+    <div class="text-center mt-3"><strong data-i18n="preview_title">Print / Download Preview — A4</strong></div>
+    <div
+      id="cv-ready"
+      class="w-[210mm] h-[297mm] mx-auto bg-white shadow-[0_6px_20px_rgba(0,0,0,0.08)] relative overflow-hidden"
+    >
+      <img
+        class="absolute left-0 top-0 w-[44%] h-[auto] object-cover z-10"
+        src="segitiga.png"
+        alt="triangle"
+      />
+
+      <div
+        id="export-layout"
+        class="flex h-full box-border py-[28mm] px-[20mm] gap-6"
+      >
+        <aside id="export-aside" class="w-[36%] relative">
+          <div class="bg-transparent p-0">
+            <div
+              class="w-[160px] h-[160px] mx-auto rounded-full flex items-center justify-center ring-8 ring-white relative z-30"
+            >
+              <img
+                src="dafa.png"
+                alt="Dafa"
+                class="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <h2 class="text-center mt-4 text-2xl font-semibold text-[#6a89c8]">Dafa Ghaitsa Yogatama</h2>
+            <p class="text-center text-sm text-gray-500 mt-1" data-i18n="role">Web Developer</p>
+
+            <div class="mt-4 text-sm text-gray-700 space-y-1">
+              <p class="flex items-center"><i class="fa-solid fa-envelope mr-3 text-gray-700"></i> <span data-i18n="contact_email">yogatamadafa9@gmail.com</span></p>
+              <p class="flex items-center"><i class="fa-solid fa-location-dot mr-3 text-gray-700"></i> <span data-i18n="contact_location">Malang, Indonesia</span></p>
+              <p class="flex items-center"><i class="fa-brands fa-github mr-3"></i> <span data-i18n="contact_github">github.com/Perdafos</span></p>
+            </div>
+
+            <p class="mt-3 text-sm text-gray-600 leading-relaxed" data-i18n="about_paragraph">Nama saya Dafa Ghaitsa Yogatama, biasa dipanggil Dafa. Keahlian: pengembangan website dan server. Hobi: basket, musik, menggambar, coding.</p>
+
+            <div class="mt-3">
+              <h4 class="font-semibold" data-i18n="skills">Skills</h4>
+              <ul class="list-disc ml-5 text-gray-700 mt-2">
+                <li data-i18n="skill_1">Web development</li>
+                <li data-i18n="skill_2">Front end developer</li>
+                <li data-i18n="skill_3">Back end developer</li>
+              </ul>
+            </div>
+
+            <section class="mt-4 flex flex-col gap-6">
+              <div class="w-full">
+                <h3 class="text-md font-bold tracking-widest" data-i18n="education">EDUCATION</h3>
+                <p class="font-semibold text-sm" data-i18n="edu1_school">SMK Negeri 6 Malang</p>
+                <p class="text-sm text-gray-500" data-i18n="edu1_major">SIJA (Sistem Informasi Jaringan Aplikasi) — 2023 - 2027</p>
+                <p class="font-semibold text-sm" data-i18n="edu2_school">SMP Negeri 22 Malang</p>
+                <p class="text-sm text-gray-500" data-i18n="edu2_years">2020 - 2023</p>
+                <p class="font-semibold text-sm" data-i18n="edu3_school">SD Model Kota Malang</p>
+                <p class="text-sm text-gray-500" data-i18n="edu3_years">2014 - 2020</p>
+              </div>
+
+              <div class="w-full">
+                <h3 class="text-md font-bold tracking-widest" data-i18n="languages">LANGUAGES</h3>
+                <p data-i18n="lang_ind">Indonesian — Fluent</p>
+                <p data-i18n="lang_en">English — Intermediate</p>
+              </div>
+            </section>
+          </div>
+        </aside>
+
+        <main id="export-main" class="w-[64%] pl-6">
+          <!-- Main content copied and simplified -->
+          <section>
+            <h3 class="text-lg tracking-widest mb-2 font-semibold" data-i18n="experience">EXPERIENCE</h3>
+            <div class="mb-4">
+                <h4 class="font-semibold" data-i18n="exp1_title">Website PKL Siswa — Team Sekolah</h4>
+                <p class="text-sm text-gray-500" data-i18n="exp1_meta">2025 - Malang · SMKN 6 Malang - On Site
+              </p>
+              <ul class="list-disc ml-5 mt-2 text-gray-700">
+                <li data-i18n="exp1_item1">Membangun platform manajemen PKL untuk siswa dan pembimbing.</li>
+                <li data-i18n="exp1_item2">Membuat sistem login multi-role (Admin, Siswa, Perusahaan).</li>
+              </ul>
+            </div>
+
+            <div class="mb-4">
+                <h4 class="font-semibold" data-i18n="exp2_title">Website Perumahan Bintaro — Team Projects
+              </h4>
+                <p class="text-sm text-gray-500" data-i18n="exp2_meta">2025 - Jakarta Selatan · Bintaro - Remote
+              </p>
+              <ul class="list-disc ml-5 mt-2 text-gray-700">
+                <li data-i18n="exp2_item1">Developed property marketing website with focus on UI/UX.</li>
+              </ul>
+            </div>
+
+            <div class="mb-4">
+                <h4 class="font-semibold" data-i18n="exp3_title">Website Marketplace Beliuk — Team Projects
+              </h4>
+                <p class="text-sm text-gray-500" data-i18n="exp3_meta">2025 - Malang · SMKNN 6 Malang - Remote
+              </p>
+              <ul class="list-disc ml-5 mt-2 text-gray-700">
+                <li data-i18n="exp3_item1">Mengembangkan sistem marketplace modern dengan fitur jual beli produk berbasis web.</li>
+                <li data-i18n="exp3_item2">Membangun halaman produk, keranjang, dan sistem checkout dengan antarmuka yang ringkas dan responsif.</li>
+                <li data-i18n="exp3_item3">Membuat dashboard penjual untuk mengelola produk, harga, dan stok secara real-time.</li>
+              </ul>
+            </div>
+
+            <h3 class="text-lg tracking-widest mb-2 font-semibold" data-i18n="achievement">ACHIEVEMENT</h3>
+            <div class="mt-2">
+              <ul class="list-disc ml-5 text-gray-700">
+                <li data-i18n="achv1">Juara 1 IPA & Lingkungan — SMPN 22 Kota Malang</li>
+                <li data-i18n="achv2">Medali Emas I2ASPO bidang Pengelolaan Limbah</li>
+                <li data-i18n="achv3">Medali Perunggu YISF bidang Penelitian Lingkungan</li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="w-[210mm] mx-auto flex gap-3 justify-center my-4 print:hidden">
+      <div>
+        <button id="lang-id" class="px-3 py-2 border rounded-md mr-2">ID</button>
+        <button id="lang-en" class="px-3 py-2 border rounded-md">EN</button>
+      </div>
+      <div class="flex gap-3">
+        <a id="download-pdf-btn" class="inline-block px-3 py-2 rounded-md bg-blue-600 text-white" href="#" data-i18n="download_pdf">Download PDF (A4)</a>
+        <a id="download-png-btn" class="inline-block px-3 py-2 rounded-md border" href="#" data-i18n="download_png">Download PNG (A4)</a>
+        <a class="inline-block px-3 py-2 rounded-md bg-gray-200" href="index.html" data-i18n="back_to_cv">Back to CV</a>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+      (function () {
+        const wrapper = document.getElementById("cv-ready");
+        const pdfBtn = document.getElementById("download-pdf-btn");
+        const pngBtn = document.getElementById("download-png-btn");
+
+        function downloadPDF() {
+          const opt = {
+            margin: 0.4,
+            filename: "CV-Dafa-Ghaitsa.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true, allowTaint: true },
+            jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+          };
+          html2pdf().set(opt).from(wrapper).save();
+        }
+
+        function downloadPNG() {
+          html2canvas(wrapper, { scale: 2, useCORS: true })
+            .then((canvas) => {
+              const A4_WIDTH = 2480;
+              const A4_HEIGHT = 3508;
+              const target = document.createElement("canvas");
+              target.width = A4_WIDTH;
+              target.height = A4_HEIGHT;
+              const ctx = target.getContext("2d");
+              ctx.fillStyle = "#ffffff";
+              ctx.fillRect(0, 0, A4_WIDTH, A4_HEIGHT);
+              ctx.drawImage(
+                canvas,
+                0,
+                0,
+                canvas.width,
+                canvas.height,
+                0,
+                0,
+                A4_WIDTH,
+                A4_HEIGHT
+              );
+              const link = document.createElement("a");
+              link.href = target.toDataURL("image/png");
+              link.download = "CV-Dafa-Ghaitsa-A4.png";
+              document.body.appendChild(link);
+              link.click();
+              link.remove();
+            })
+            .catch((err) => alert("PNG export failed: " + err));
+        }
+
+        pdfBtn &&
+          pdfBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            downloadPDF();
+          });
+        pngBtn &&
+          pngBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            downloadPNG();
+          });
+        // Optionally auto-trigger PDF when page opens. Commented out by default.
+        // window.addEventListener('load', downloadPDF);
+      })();
+    </script>
+    <script>
+      (function(){
+        const langIdBtn = document.getElementById('lang-id');
+        const langEnBtn = document.getElementById('lang-en');
+
+        const translations = {
+          id: {
+            download_heading: 'Unduhan',
+            preview_title: 'Pratinjau Cetak / Unduh — A4',
+            download_pdf: 'Unduh PDF (A4)',
+            download_png: 'Unduh PNG (A4)',
+            back_to_cv: 'Kembali ke CV',
+
+            role: 'Web Developer',
+            contact_email: 'yogatamadafa9@gmail.com',
+            contact_location: 'Malang, Indonesia',
+            contact_github: 'github.com/Perdafos',
+            about_paragraph: 'Nama saya Dafa Ghaitsa Yogatama, biasa dipanggil Dafa. Keahlian: pengembangan website dan server. Hobi: basket, musik, menggambar, coding.',
+
+            skills: 'Keahlian',
+            skill_1: 'Web development',
+            skill_2: 'Front end developer',
+            skill_3: 'Back end developer',
+
+            education: 'PENDIDIKAN',
+            edu1_school: 'SMK Negeri 6 Malang',
+            edu1_major: 'SIJA (Sistem Informasi Jaringan Aplikasi) — 2023 - 2027',
+            edu2_school: 'SMP Negeri 22 Malang',
+            edu2_years: '2020 - 2023',
+            edu3_school: 'SD Model Kota Malang',
+            edu3_years: '2014 - 2020',
+
+            languages: 'BAHASA',
+            lang_ind: 'Indonesian — Fasih',
+            lang_en: 'English — Menengah',
+
+            experience: 'PENGALAMAN',
+            exp1_title: 'Website PKL Siswa — Team Sekolah',
+            exp1_meta: '2025 - Malang · SMKN 6 Malang - On Site',
+            exp1_item1: 'Membangun platform manajemen PKL untuk siswa dan pembimbing.',
+            exp1_item2: 'Membuat sistem login multi-role (Admin, Siswa, Perusahaan).',
+
+            exp2_title: 'Website Perumahan Bintaro — Team Projects',
+            exp2_meta: '2025 - Jakarta Selatan · Bintaro - Remote',
+            exp2_item1: 'Mengembangkan website pemasaran properti dengan fokus pada UI/UX.',
+
+            exp3_title: 'Website Marketplace Beliuk — Team Projects',
+            exp3_meta: '2025 - Malang · SMKN 6 Malang - Remote',
+            exp3_item1: 'Mengembangkan sistem marketplace modern dengan fitur jual beli produk berbasis web.',
+            exp3_item2: 'Membangun halaman produk, keranjang, dan sistem checkout dengan antarmuka yang ringkas dan responsif.',
+            exp3_item3: 'Membuat dashboard penjual untuk mengelola produk, harga, dan stok secara real-time.',
+
+            achievement: 'PRESTASI',
+            achv1: 'Juara 1 IPA & Lingkungan — SMPN 22 Kota Malang',
+            achv2: 'Medali Emas I2ASPO bidang Pengelolaan Limbah',
+            achv3: 'Medali Perunggu YISF bidang Penelitian Lingkungan',
+          },
+
+          en: {
+            download_heading: 'Download',
+            preview_title: 'Print / Download Preview — A4',
+            download_pdf: 'Download PDF (A4)',
+            download_png: 'Download PNG (A4)',
+            back_to_cv: 'Back to CV',
+
+            role: 'Web Developer',
+            contact_email: 'yogatamadafa9@gmail.com',
+            contact_location: 'Malang, Indonesia',
+            contact_github: 'github.com/Perdafos',
+            about_paragraph: 'My name is Dafa Ghaitsa Yogatama, commonly called Dafa. I have expertise in web development and server management. Hobbies: basketball, music, drawing, coding.',
+
+            skills: 'Skills',
+            skill_1: 'Web development',
+            skill_2: 'Front end developer',
+            skill_3: 'Back end developer',
+
+            education: 'EDUCATION',
+            edu1_school: 'SMK Negeri 6 Malang',
+            edu1_major: 'SIJA (Computer & Network Engineering) — 2023 - 2027',
+            edu2_school: 'SMP Negeri 22 Malang',
+            edu2_years: '2020 - 2023',
+            edu3_school: 'SD Model Kota Malang',
+            edu3_years: '2014 - 2020',
+
+            languages: 'LANGUAGES',
+            lang_ind: 'Indonesian — Fluent',
+            lang_en: 'English — Intermediate',
+
+            experience: 'EXPERIENCE',
+            exp1_title: 'Student Internship Website — School Team',
+            exp1_meta: '2025 - Malang · SMKN 6 Malang - On Site',
+            exp1_item1: 'Built an internship management platform for students and supervisors.',
+            exp1_item2: 'Implemented a multi-role login system (Admin, Student, Company).',
+
+            exp2_title: 'Bintaro Housing Website — Team Project',
+            exp2_meta: '2025 - Jakarta Selatan · Bintaro - Remote',
+            exp2_item1: 'Developed a property marketing website focused on UI/UX.',
+
+            exp3_title: 'Beliuk Marketplace Website — Team Project',
+            exp3_meta: '2025 - Malang · SMKN 6 Malang - Remote',
+            exp3_item1: 'Built a modern marketplace with buying/selling features.',
+            exp3_item2: 'Implemented product pages, cart, and a responsive checkout system.',
+            exp3_item3: 'Created seller dashboard for managing products, prices and inventory in real-time.',
+
+            achievement: 'ACHIEVEMENT',
+            achv1: '1st Place Science & Environment — SMPN 22 Malang City',
+            achv2: 'Gold Medal at I2ASPO in Waste Management',
+            achv3: 'Bronze Medal at YISF in Environmental Research',
+          }
+        };
+
+        function applyLang(lang){
+          document.querySelectorAll('[data-i18n]').forEach(el=>{
+            const key = el.getAttribute('data-i18n');
+            const val = translations[lang] && translations[lang][key];
+            if(val) el.textContent = val;
+          });
+          langIdBtn.classList.toggle('bg-blue-600', lang === 'id');
+          langIdBtn.classList.toggle('text-white', lang === 'id');
+          langEnBtn.classList.toggle('bg-blue-600', lang === 'en');
+          langEnBtn.classList.toggle('text-white', lang === 'en');
+          try{ localStorage.setItem('cv-lang', lang); }catch(e){}
+        }
+
+        langIdBtn && langIdBtn.addEventListener('click', ()=>applyLang('id'));
+        langEnBtn && langEnBtn.addEventListener('click', ()=>applyLang('en'));
+
+        const stored = (function(){ try{ return localStorage.getItem('cv-lang'); }catch(e){ return null; } })();
+        applyLang(stored ? stored : 'id');
+      })();
+    </script>
+  </body>
+</html>
