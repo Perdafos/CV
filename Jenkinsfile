@@ -11,8 +11,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    scp -o StrictHostKeyChecking=no -r * \
+                    scp -P 2222 -o StrictHostKeyChecking=no \
+                    -r Jenkinsfile dafa.png download.html index.html segitiga.png style.css \
                     perdafos@103.144.209.109:/var/www/html/
+
                 '''
             }
         }
