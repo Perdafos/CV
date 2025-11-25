@@ -7,7 +7,7 @@ pipeline {
         // Nginx defaultnya berjalan di port 80 di dalam kontainer
         CONTAINER_PORT = 80               
         // Port yang diminta user (Port di host server)
-        HOST_PORT = 5060                  
+        HOST_PORT = 8088                  
         DOCKER_REGISTRY = ''              // Kosongkan jika tidak push ke registry
         DOCKER_IMAGE_NAME = "cv-static:${env.BUILD_NUMBER}" // Nama image lokal
     }
